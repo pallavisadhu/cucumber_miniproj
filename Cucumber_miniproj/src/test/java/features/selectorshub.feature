@@ -4,7 +4,7 @@ Background: Navigate to the selectors hub practice page
 When the user checks the title of the webpage 
 Then the title should be "Xpath Practice Page | Shadow dom, nested shadow dom, iframe, nested iframe and more complex automation scenarios."
 
-@smoke @regression
+@smoke
 Scenario: To verify form fill 
 When the user enter following details in the form
 |Fields       |Values        |

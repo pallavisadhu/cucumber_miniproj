@@ -49,6 +49,18 @@ public class SelectorsHubPage {
 	@FindBy(xpath="//input[@placeholder='Enter Last name']")
 	WebElement lastName;
 	
+	@FindBy(id="userId")
+	WebElement uid;
+	
+	@FindBy(id="pass")
+	WebElement pwd;
+	
+	@FindBy(name="company")
+	WebElement comp;
+	
+	@FindBy(name="mobile number")
+	WebElement mobileno;
+	
 	
 	public SelectorsHubPage(WebDriver driver) {
 		this.driver = driver;
@@ -59,7 +71,11 @@ public class SelectorsHubPage {
 		
 	}
 	
-	public void submitForm() {
+	public void verifySubmitForm(String userId, String password, String company, String mobile) {
+		uid.sendKeys(userId);
+		pwd.sendKeys(password);
+		comp.sendKeys(company);
+		mobileno.sendKeys(mobile);
 		submitBtn.submit();
 	}
 	

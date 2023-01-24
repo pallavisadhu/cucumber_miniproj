@@ -10,7 +10,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 		features="/Users/pallavisadhu/Desktop/cucumber_miniproject/Cucumber_miniproj/src/test/java/features"
 		,glue={"stepdef"}
-		,tags= {"@regression","~@smoke"}
+		,tags= {"@smoke"}
 		,plugin={"pretty","html:target/html","json:target/report.json"}
 		,monochrome=true,dryRun=false,strict=true
 		)

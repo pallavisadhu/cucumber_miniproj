@@ -16,7 +16,7 @@ public class SelectorsHubStepdef {
 	
 	WebDriver driver = Base.driver;
 	SelectorsHubPage sp = new SelectorsHubPage(driver);
-	String title,text;
+	String title,text,userId,password,company,mobile;
 	int count;
 	List<List<String>> data;
 
@@ -35,16 +35,21 @@ public class SelectorsHubStepdef {
 	public void the_user_enter_following_details_in_the_form(DataTable arg1) throws Throwable {
 		
 		data = arg1.raw();
-		driver.findElement(By.id("userId")).sendKeys(data.get(1).get(1));
+	    userId = data.get(1).get(1);
+		password = data.get(2).get(1);
+		company = data.get(3).get(1);
+		mobile = data.get(4).get(1);
+		
+		/*driver.findElement(By.id("userId")).sendKeys(data.get(1).get(1));
 		driver.findElement(By.id("pass")).sendKeys(data.get(2).get(1));
 		driver.findElement(By.name("company")).sendKeys(data.get(3).get(1));
-		driver.findElement(By.name("mobile number")).sendKeys(data.get(2).get(1));
+		driver.findElement(By.name("mobile number")).sendKeys(data.get(2).get(1));*/
 		
 	}
 
 	@When("^the user click on the Submit button$")
 	public void the_user_click_on_the_Submit_button() throws Throwable {
-		sp.submitForm();
+		sp.verifySubmitForm(userId,password,company,mobile);
 
 	}
 
